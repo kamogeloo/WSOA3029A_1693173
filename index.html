@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name = "author" content = "Kamogelo Mafaesa">
+    <meta name = "url" content = "https://kamogeloo.github.io/WSOA3029A_1693173/">
+    <meta name = "description" content="This is the homepage">
+    <title>wsoa3029A_1693173</title>
+    <link href="/style.css" rel ="stylesheet" type = "text/css">
+    <link href="/header.css" rel = "stylesheet" type = "text/css">
+    <link href = "/footer.css" rel = "stylesheet" type = "text/css">
+    <script src="/index.js" type="module" defer></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;900&display=swap" rel="stylesheet">
+   
+
+    
+   
+                   
+</head>
+<body>
+    <header>
+        <div class = "header">
+
+        </div>
+        <div></div>
+        <nav id = menulist class = navi>
+            <div class = "logo"><img src="/logoo.png" alt="website logo" width="40%" height= "auto"></div>
+
+            <div class = "menucontainer" >
+            <ul>
+               
+           <li class = "menu"> <a href="#top"> Home</a></li>
+           <li class = "menu"> <a href="#middle">About</a> </li>
+           <li class = "menu"><a href= "#bottom">Blogs</a> </li>
+           <li class = "menu"><button id= "menubtn" onclick = "wireframes()">Wireframes</button></li>
+           <li class = "menu"><button id= "menubtn" onclick = "creativity()">Creativity</button></li>
+           <li class = "menu"><button id= "menubtn" onclick = "references()">References</button></li>
+           <li class = "menu"><a href = "javascript:void(0);" class="menubars" onclick="Responsivemenu()"><i class = "fa-fa-bars"></i></a></li>
+           
+
+        </ul>
+    </div>
+    </div>
+    <!--<div class="menubars">
+        <span class="line1"></span>
+        <span class="line2"></span>
+        <span class="line3"></span>
+    </div>-->
+
+
+    </header>
+
+    <main>
+       <div id = "top"><a href="index.html"></a> 
+
+        <h1 class = "homepagetext"> <strong>Hello. Welcome to my website</strong></h1>
+        <button class = "Aboutbuttn" onclick = "buttonclicked()"> Kamogelo Mafaesa 1693173</button>
+
+     </div>
+
+       <div id = "middle"><a href = "about.html"></a>
+
+        <h1>About</h1>
+        <article class = "text">
+        <p> </p>
+        <p>This website is a project that I am working on for my Interactive media course; it will feature blogs about the topics that I am learning about and graphs etc.</p>
+        <p>Please do join me on this journey as I learn about web development and the role that things like infographics play in web development.( SOON TO BE CHANGED!) </p>
+    </article>
+        
+       </div>
+       
+       <div id = "bottom"><a href = "blogs.html"></a>
+        <h1 id ="blogtitle">Blogs</h1>
+
+        <div class = "row">
+        <div class = "column">
+          <figure> <a href= "blog1.html"> <img src="/representation-matters-in-stock-photos.jpg" alt="representation of different people" width=80%> </a></figure>
+          <figcaption>Representation</figcaption>
+        </div>
+
+        <div class = "column">
+         <figure> <a href = "blog2.html"> <img src="/What-is-Data-Visualization-Blog-Header.jpg"  alt="image about data visualisation" width=100% ></a>  </figure>
+         <figcaption>Data Visualisation</figcaption>
+        </div>
+
+        <div class = "column">
+         <figure> <a href= "blog3.html">   <img src="/Infrographic.jpg" alt="different infographics" width=60%> </a> </figure>
+         <figcaption>Information Is beautiful</figcaption>
+
+        </div>
+    </div>
+
+</main>
+
+<footer class = "footer">
+
+    <a href = "https://www.facebook.com/kamo.jasmine" class = "fa fa-facebook"></a>
+    <a href = "https://www.instagram.com/kamo_mafaesa/?hl=en" class = "fa fa-instagram"></a>
+    
+
+</footer>
+<script>
+     function buttonclicked(){
+         document.location.href="about.html";
+     }
+     function wireframes(){
+         document.location.href="wireframe.html";
+     }
+     function creativity(){
+         document.location.href="creativity.html";
+
+     }
+      function references(){
+         document.location.href="references.html";
+         
+     }
+
+     /*let nav =  document.getElementsByClassName(".menucontainer");
+             window.onscroll = function() {
+         if(nav == document.getElementById("middle")){
+             nav.style.backgroundColor= "red";
+             
+            
+         }
+         
+     }*/
+
+     
+
+</script>
+
+</body>
+</html>
