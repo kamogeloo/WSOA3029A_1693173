@@ -263,7 +263,7 @@ and (min-resolution:192dpi){
 }
 a  {
     text-decoration: none;
-    color: white;
+    color:rgb(255, 255, 255)
   }
   a:hover{
       color: rgb(126, 65, 98);
@@ -297,14 +297,29 @@ section{
     margin-left: auto;
     margin-right: auto;
     margin-top: 5%;
+    margin-bottom: 5%;
     width: 50%;
+    
+    
 
 }
-.wireframes img, .risk img{
+.blogs{
+    
+    column-count: 2;
+    column-gap: 100px;
+    width: 80%;
+    margin-top: 5%;
+    font-weight: 10px;
+    
+
+    
+}
+.wireframes img, .risk figure, .pallete figure{
     width: 800px;
     height: auto;
    margin-left: 300px;
 }
+
 .wireframes figcaption{
     text-align: center;
     
@@ -330,7 +345,7 @@ section{
     align-items: center;
 }
 .row{
-    margin-top: 15%;
+    margin-top: 25%;
     display: flex;
 }
 .column:hover{
