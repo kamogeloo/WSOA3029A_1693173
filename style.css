@@ -316,6 +316,9 @@ section{
     
     
 }
+#graph{
+    margin-left: 300px;
+}
 .row{
     margin-top: 15%;
     display: flex;

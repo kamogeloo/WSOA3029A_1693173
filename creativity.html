@@ -29,7 +29,7 @@
     <div class = "header">
 
     </div>
-    <nav id = menulist class = navi>
+    <nav id = "menulist" class = "navi" >
         <div class = "logo"><img src="/logoo.png" alt="website logo" width="40%" height= "auto"></div>
 
         <div class = "menucontainer" >
@@ -57,7 +57,7 @@
  </header>
  <main>
 
-    <svg id = "deaths" width = "600" height = "600"></svg>
+    <svg id = "graph" width = "600" height = "600"></svg>
 
  </main>
  <footer class = "footer">
@@ -83,23 +83,95 @@
     }
 
 
-let margin= 50;
-let topMargin =10;
-let graphHeight = 500;
-let deathsArea = d3.select("#deaths");
-let xScale = d3.scaleLinear().domain([0, 100]). range([0, 500]);
-let yScale = d3.scaleLinear().domain([0, 100]). range([graphHeight, 0]);
+let exampleData = [
+    { x:10, y: 88, label:"fever"},
+    { x:20, y: 68},
+    { x:30, y: 14},
+    { x:40, y: 38},
+    { x:50, y: 33.4},
+    { x:60, y: 14},
+    { x:70, y: 18},
+    { x:80, y: 14},
+    { x:90, y: 11},
+]
 
-deathsArea
+let margin = 50;
+let height = 500;
+let width = 10;
+
+let graphArea = d3.select("#graph");
+graphArea
 .append("g")
-.attr("transform", 'translate(${margin},10)')
+/*.attr('transform', 'translate(50, 50)');*/
+
+
+
+let xScale = d3.scaleLinear()
+.domain([0, 100])
+ .range([0, 500]);
+ 
+
+
+
+let yScale = d3.scaleLinear()
+.domain([0, 100])
+.range([height + width, 0]);
+
+ graphArea
+.append("g")
+.attr('transform', 'translate(50 , 10)')
 .call(d3.axisLeft(yScale));
 
-deathsArea.append("g")
-.attr("transform", 'translate(${margin},${graphHeight + topMargin})')
-.call(d3.axisBottom(xScale));
 
-deathsArea
+graphArea
+.append("g")
+.attr('transform', 'translate(50, 510)')
+.call(d3.axisBottom(xScale));
+/*attr('transform', 'translate(0, 510)');*/
+
+//Label for the y-axis
+graphArea
+.append("text")
+.attr("transform", "rotate(-90)")
+.attr("y", 0 - margin.left)
+.attr("x", 0 - (height/2))
+.attr("dy", "1em")
+.style("text-anchor", "middle")
+.text("Percentage (%)");
+
+//Label for the x-axis
+graphArea
+.append("text")
+.attr("class", "x label")
+.style("text-achor", "middle")
+.attr("x",width + 250)
+.attr("y", height - -80)
+.text("Symptoms");
+
+//label for x variables
+/*graphArea
+.append ("text")
+.attr("class","x axis")
+.attr("transform", "translate(" + (width/2) + " , "+(height + margin.bottom) + ")")
+/*.attr("transform", "translate(85, " + height + ")")
+.text("fever");*/
+
+
+
+graphArea
+.selectAll('label')
+.data(exampleData)
+.enter()
+.append("circle")
+.attr("cx", function (d) {
+    return xScale(d.x);
+})
+.attr("cy", function (d){
+    return yScale(d.y);
+})
+.attr("r",7)
+.style("fill", "purple");
+
 
 
 /*deathsArea
