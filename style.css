@@ -235,7 +235,7 @@ and (min-resolution:192dpi){
   
 }
 #top{
-    background-image: url("/information-visualization-3D-Scatter-Plot.gif");
+    background-image: url("information-visualization-3D-Scatter-Plot.gif");
     background-color: black;
     color: white;
 }
