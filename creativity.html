@@ -24,7 +24,7 @@
 
 
 
-<body>
+<body style="background-color:  rgb(0, 0, 0);">
  <header>
     <div class = "header">
 
@@ -49,17 +49,24 @@
     <h1 class = "placeholder">Wireframes and Style Guide</h1>
 </div>
     </nav>
-    <div>
-         
-    <h2> Graphs</h2>
 
-</div>
+    
  </header>
  <main>
+    <div>
+         
+        <h2> Graphs</h2>
+    
+    </div>
+    <br>
+    <br>
+    <div>
 
     <svg id = "graph" width = "600" height = "600"></svg>
 
+</div>
  </main>
+
  <footer class = "footer">
      
     <a href = "https://www.facebook.com/kamo.jasmine" class = "fa fa-facebook"></a>
@@ -84,15 +91,16 @@
 
 
 let exampleData = [
-    { x:10, y: 88, label:"fever"},
-    { x:20, y: 68},
-    { x:30, y: 14},
-    { x:40, y: 38},
-    { x:50, y: 33.4},
-    { x:60, y: 14},
-    { x:70, y: 18},
-    { x:80, y: 14},
-    { x:90, y: 11},
+    
+    { x:20, y: 88},
+    { x:30, y: 68},
+    { x:40, y: 14},
+    { x:50, y: 38},
+    { x:60, y: 33.4},
+    { x:70, y: 14},
+    { x:80, y: 18},
+    { x:90, y: 14},
+    { x:100, y: 11},
 ]
 
 let margin = 50;
@@ -125,7 +133,7 @@ let yScale = d3.scaleLinear()
 
 graphArea
 .append("g")
-.attr('transform', 'translate(50, 510)')
+.attr('transform', 'translate(50, 520)')
 .call(d3.axisBottom(xScale));
 /*attr('transform', 'translate(0, 510)');*/
 
@@ -137,7 +145,8 @@ graphArea
 .attr("x", 0 - (height/2))
 .attr("dy", "1em")
 .style("text-anchor", "middle")
-.text("Percentage (%)");
+.text("Percentage (%)")
+.style('fill', 'white');
 
 //Label for the x-axis
 graphArea
@@ -146,18 +155,110 @@ graphArea
 .style("text-achor", "middle")
 .attr("x",width + 250)
 .attr("y", height - -80)
-.text("Symptoms");
+.text("Symptoms")
+.style('fill', 'white');
 
+graphArea
+.append("text")
+.attr("class", "x label")
+.style("text-achor", "middle")
+.attr("x",width + 250)
+.attr("y", height - 465)
+.text("Most Common Symptoms of Covid-19")
+.style('fill', 'white');
+
+//fever text
+graphArea
+.append("text")
+.attr("class", "x label")
+.style("text-achor", "middle")
+.attr("x",width + 100)
+.attr("y", height - 435)
+.text("Fever (88%)")
+.style('fill', 'Red');
+
+
+graphArea
+.append("text")
+.attr("class", "x label")
+.style("text-achor", "middle")
+.attr("x",width + 150)
+.attr("y", height - 333)
+.text("Dry Cough (68%)")
+.style('fill', 'darkOrange');
+
+graphArea
+.append("text")
+.attr("class", "x label")
+.style("text-achor", "middle")
+.attr("x",width + 55)
+.attr("y", height - 55)
+.text("Headaches (14%)")
+.style('fill', 'Yellow');
+
+graphArea
+.append("text")
+.attr("class", "x label")
+.style("text-achor", "middle")
+.attr("x",width + 135)
+.attr("y", height - 180)
+.text("Fatigue (38%)")
+.style('fill', 'Orange');
+
+graphArea
+.append("text")
+.attr("class", "x label")
+.style("text-achor", "middle")
+.attr("x",width + 300)
+.attr("y", height - 155)
+.text("Phlem (33%)")
+.style('fill', 'Orange');
+
+graphArea
+.append("text")
+.attr("class", "x label")
+.style("text-achor", "middle")
+.attr("x",width + 200)
+.attr("y", height - 55)
+.text("MuscleAches (14%)")
+.style('fill', 'Yellow');
+
+graphArea
+.append("text")
+.attr("class", "x label")
+.style("text-achor", "middle")
+.attr("x",width + 250)
+.attr("y", height - 79)
+.text("ShortBreath (18%)")
+.style('fill', 'Yellow');
+
+graphArea
+.append("text")
+.attr("class", "x label")
+.style("text-achor", "middle")
+.attr("x",width + 450)
+.attr("y", height - 60)
+.text("SoreThroat (14%)")
+.style('fill', 'Yellow');
+
+graphArea
+.append("text")
+.attr("class", "x label")
+.style("text-achor", "middle")
+.attr("x",width + 500)
+.attr("y", height - 40)
+.text("Chills (11%)")
+.style('fill', 'Yellow');
 //label for x variables
 /*graphArea
 .append ("text")
 .attr("class","x axis")
-.attr("transform", "translate(" + (width/2) + " , "+(height + margin.bottom) + ")")
-/*.attr("transform", "translate(85, " + height + ")")
+.attr("transform", "translate(85, " + height  + ")")
 .text("fever");*/
 
 
 
+//placement shape and color of circles
 graphArea
 .selectAll('label')
 .data(exampleData)
@@ -170,37 +271,8 @@ graphArea
     return yScale(d.y);
 })
 .attr("r",7)
-.style("fill", "purple");
-
-
-
-/*deathsArea
-.append("circle")
-.attr("cx", xScale(10))
-.attr("cy", 100)
-.attr("r",40)
-.style("fill", "blue");
-deathsArea
-.append("circle")
-.attr("cx", xScale(50))
-.attr("cy", 100)
-.attr("r",40)
-.style("fill", "blue");
-deathsArea
-.append("circle")
-.attr("cx", xScale(75))
-.attr("cy", 100)
-.attr("r",40)
-.style("fill", "blue");*/
-
-
-
-
-
-
-
-
-
+.style( "fill", "Aqua")
+;
 
 
 
