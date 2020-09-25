@@ -268,7 +268,7 @@ section{
     height: auto;
    
 }
-.blogs{
+/*.blogs{
     
     
     width: 288px;
@@ -279,7 +279,7 @@ section{
     
 
     
-}
+}*/
 
 
 .row{
@@ -419,7 +419,7 @@ section{
     
 
 }
-.blogs{
+/*.blogs{
     
     column-count: 2;
     column-gap: 100px;
@@ -429,7 +429,7 @@ section{
     
 
     
-}
+}*/
 .wireframes img, .risk figure, .pallete figure{
     width: 800px;
     height: auto;
