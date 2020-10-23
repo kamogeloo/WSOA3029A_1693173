@@ -8,12 +8,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name = "url" content = "https://kamogeloo.github.io/WSOA3029A_1693173/">
     <meta name = "description" content="This is the creativity page">
-    <title>wsoa3029A_1693173</title>
     <link href="style.css" rel ="stylesheet" type = "text/css">
     <link href="header.css" rel = "stylesheet" type = "text/css">
     <link href = "footer.css" rel = "stylesheet" type = "text/css">
-    <script src="/index.js" type="module" defer></script>
-    <script src="https://d3js.org/d3.v6.min.js"></script>
+    <script src="d3/d3.min.js"></script>
+    <script src="index.js" type="module" defer></script>
+    <title>Graphs</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
@@ -41,15 +41,31 @@
     </div>
     <br>
     <br>
+   
     <div>
-
     <svg id = "graph" width = "600" height = "600"></svg>
 
 </div>
+
 <section><p>This graph represents the common covid-19 symptoms, I found this information that I used to build this graph on a website called <a class = "linking" href = "https://www.flattenthecurve.com/act-and-prepare/">Flatten The Curve</a>.
 This site provides users with information on how to take care of themsleves during this pandemic; it educates people about Covid-19 and the measures they can take to ensure that they stay safe. </p>
 
     
+</section>
+
+<section>
+      <h3>Graph 2</h3>
+      <div>
+       <svg id = "graph3" width ="800" height = "800"></svg>
+
+      </div>
+</section>
+<section>
+    <h3>Graph 3</h3>
+    <div>
+      <svg id = "graph2" width = "800" height = "800"></svg>
+
+    </div>
 </section>
 <section><a href="index.html">Home</a></section>
 
@@ -80,15 +96,15 @@ This site provides users with information on how to take care of themsleves duri
 
 let exampleData = [
     
-    { x:20, y: 88},
-    { x:30, y: 68},
-    { x:40, y: 14},
-    { x:50, y: 38},
-    { x:60, y: 33.4},
-    { x:70, y: 14},
-    { x:80, y: 18},
-    { x:90, y: 14},
-    { x:100, y: 11},
+    { x:20, y: 85},
+    { x:30, y: 65},
+    { x:40, y: 11},
+    { x:50, y: 34},
+    { x:60, y: 30},
+    { x:70, y: 11},
+    { x:80, y: 15},
+    { x:90, y: 11},
+    { x:100, y: 9},
 ]
 
 let margin = 50;
@@ -146,12 +162,13 @@ graphArea
 .text("Symptoms")
 .style('fill', 'white');
 
+//title of graph
 graphArea
 .append("text")
 .attr("class", "x label")
 .style("text-achor", "middle")
 .attr("x",width + 150)
-.attr("y", height - 465)
+.attr("y", height - 488)
 .text("Most Common Symptoms of Covid-19")
 .style('fill', 'white');
 
@@ -161,11 +178,11 @@ graphArea
 .attr("class", "x label")
 .style("text-achor", "middle")
 .attr("x",width + 100)
-.attr("y", height - 435)
+.attr("y", height - 425)
 .text("Fever (88%)")
 .style('fill', 'Red');
 
-
+//dry cough
 graphArea
 .append("text")
 .attr("class", "x label")
@@ -175,6 +192,7 @@ graphArea
 .text("Dry Cough (68%)")
 .style('fill', 'darkOrange');
 
+//heaches
 graphArea
 .append("text")
 .attr("class", "x label")
@@ -184,6 +202,7 @@ graphArea
 .text("Headaches (14%)")
 .style('fill', 'Yellow');
 
+//Fatigue
 graphArea
 .append("text")
 .attr("class", "x label")
@@ -193,6 +212,7 @@ graphArea
 .text("Fatigue (38%)")
 .style('fill', 'Orange');
 
+//Phlem
 graphArea
 .append("text")
 .attr("class", "x label")
@@ -202,6 +222,7 @@ graphArea
 .text("Phlem (33%)")
 .style('fill', 'Orange');
 
+//MuscleAche
 graphArea
 .append("text")
 .attr("class", "x label")
@@ -211,30 +232,33 @@ graphArea
 .text("MuscleAches (14%)")
 .style('fill', 'Yellow');
 
+//ShortBreath
 graphArea
 .append("text")
 .attr("class", "x label")
 .style("text-achor", "middle")
-.attr("x",width + 250)
+.attr("x",width + 395)
 .attr("y", height - 79)
 .text("ShortBreath (18%)")
 .style('fill', 'Yellow');
 
+//SoreThroat
 graphArea
 .append("text")
 .attr("class", "x label")
 .style("text-achor", "middle")
 .attr("x",width + 450)
-.attr("y", height - 60)
+.attr("y", height - 50)
 .text("SoreThroat (14%)")
 .style('fill', 'Yellow');
 
+//Chills
 graphArea
 .append("text")
 .attr("class", "x label")
 .style("text-achor", "middle")
 .attr("x",width + 500)
-.attr("y", height - 40)
+.attr("y", height - 30)
 .text("Chills (11%)")
 .style('fill', 'Yellow');
 //label for x variables
@@ -258,8 +282,9 @@ graphArea
 .attr("cy", function (d){
     return yScale(d.y);
 })
-.attr("r",7)
+.attr("r",5)
 .style( "fill", "Aqua");
+
 
 
 
