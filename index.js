@@ -85,98 +85,99 @@ graphArea
 .attr("y", height - 488)
 .text("Most Common Symptoms of Covid-19")
 .style('fill', 'white')
-.append("circle")
-.attr("fill", "yellow");
+
 
 //fever text
 graphArea
-.append("text")
+.append("rect")
 .attr("class", "x name")
-.style("text-achor", "middle")
-.attr("x",width + 100)
-.attr("y", height - 419)
-.text("Fever (88%)")
-.style('fill', 'Red');
+.attr("x",width + 83)
+.attr("y", height - 430)
+.attr("width", 15)
+.attr("height", 15)
+.style('fill', 'Red')
+.text ('Fever')
+;
 
 
 //dry cough
 graphArea
-.append("text")
+.append("rect")
 .attr("class", "x name")
-.style("text-achor", "middle")
-.attr("x",width + 150)
-.attr("y", height - 315)
-.text("Dry Cough (68%)")
-.style('fill', 'darkOrange');
+.attr("x", width + 133)
+.attr("y", height - 330)
+.attr("width", 15)
+.attr("height", 15)
+.style ("fill", "darkOrange");
 
 //heaches
 graphArea
-.append("text")
+.append("rect")
 .attr("class", "x name")
-.style("text-achor", "middle")
-.attr("x",width + 200)
-.attr("y", height - 45)
-.text("Headaches (14%)")
+.attr("x",width + 183)
+.attr("y", height - 54)
+.attr("width", 15)
+.attr("height", 15)
 .style('fill', 'Yellow');
 
 //Fatigue
 graphArea
-.append("text")
+.append("rect")
 .attr("class", "x name")
-.style("text-achor", "middle")
-.attr("x",width + 250)
-.attr("y", height - 160)
-.text("Fatigue (38%)")
+.attr("x",width + 233)
+.attr("y", height - 170)
+.attr("width",15 )
+.attr("height", 15)
 .style('fill', 'Orange');
 
 //Phlem
 graphArea
-.append("text")
+.append("rect")
 .attr("class", "x name")
-.style("text-achor", "middle")
-.attr("x",width + 300)
-.attr("y", height - 135)
-.text("Phlem (33%)")
+.attr("x",width + 283)
+.attr("y", height - 150)
+.attr("width", 15)
+.attr("height", 15)
 .style('fill', 'Orange');
 
 //MuscleAche
 graphArea
-.append("text")
+.append("rect")
 .attr("class", "x name")
-.style("text-achor", "middle")
-.attr("x",width + 270)
-.attr("y", height - 25)
-.text("MuscleAches (14%)")
+.attr("x",width + 333)
+.attr("y", height - 53)
+.attr("width", 15)
+.attr("height", 15)
 .style('fill', 'Yellow');
 
 //ShortBreath
 graphArea
-.append("text")
+.append("rect")
 .attr("class", "x name")
-.style("text-achor", "middle")
-.attr("x",width + 400)
-.attr("y", height - 65)
-.text("ShortBreath (18%)")
+.attr("x",width + 383)
+.attr("y", height - 75)
+.attr("width", 15)
+.attr("height", 15)
 .style('fill', 'Yellow');
 
 //SoreThroat
 graphArea
-.append("text")
+.append("rect")
 .attr("class", "x name")
-.style("text-achor", "middle")
-.attr("x",width + 450)
-.attr("y", height - 50)
-.text("SoreThroat (14%)")
+.attr("x",width + 433)
+.attr("y", height - 53)
+.attr("width",15)
+.attr("height", 15)
 .style('fill', 'Yellow');
 
 //Chills
 graphArea
-.append("text")
-.attr("class", "x name")
+.append("rect")
 .style("text-achor", "middle")
-.attr("x",width + 500)
-.attr("y", height - 30)
-.text("Chills (11%)")
+.attr("x",width + 483)
+.attr("y", height - 43)
+.attr("width", 15)
+.attr("height", 15)
 .style('fill', 'Yellow');
 //label for x variables
 /*graphArea
@@ -188,7 +189,7 @@ graphArea
 
 
 //placement shape and color of circles
-graphArea
+/*graphArea
 .selectAll("name")
 .data(covidData)
 .enter()
@@ -198,26 +199,32 @@ graphArea
 })
 .attr("cy", function (d){
     return y1Scale(d.y);
-})
+})f
 .attr("r",5)
 .attr('stroke', 'white')
-.style( "fill", "#843b62");
+.style( "fill", "#843b62");*/
 
-d3.selectAll("circle")
+d3.selectAll("rect")
+
 .on("mouseover", function (){
     d3.select(this)
-    .attr("r", 10)
-    .attr('stroke', 'red')
-    .style("fill", "#ffb997")
+    
+    .attr("width", 40)
+    .attr("height", 40)
+    .style('stroke', 'red')
+    
 
     .on("mouseout", function (){
         d3.select(this)
-        .attr("r", 5)
-        .attr('stroke', 'white')
-        .style("fill", "#843b62")
+        .transition()
+        .delay(1000)
+        .duration(1000)
+        .attr("width", 15)
+        .attr("height", 15)
+        .style('stroke', 'none')
+        
     })
 })
-
 
 
 
