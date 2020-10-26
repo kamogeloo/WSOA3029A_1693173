@@ -86,8 +86,8 @@ graphArea
 .text("Most Common Symptoms of Covid-19")
 .style('fill', 'white')
 
-
-//fever text
+///////////////rectangles//////////////////////
+//fever 
 graphArea
 .append("rect")
 .attr("class", "x name")
@@ -179,6 +179,100 @@ graphArea
 .attr("width", 15)
 .attr("height", 15)
 .style('fill', 'Yellow');
+
+
+//////////////////////////////////////////text for labels////////////////////////////
+
+
+//fever text
+graphArea
+.append("text")
+.attr("class", "x label")
+.style("text-achor", "middle")
+.attr("x",width + 130)
+.attr("y", height - 420)
+.text("Fever (88%)")
+.style('fill', 'Red');
+
+//dry cough
+graphArea
+.append("text")
+.attr("class", "x label")
+.style("text-achor", "middle")
+.attr("x",width + 173)
+.attr("y", height - 318)
+.text("Dry Cough (68%)")
+.style('fill', 'darkOrange');
+
+//heaches
+graphArea
+.append("text")
+.attr("class", "x label")
+.style("text-achor", "middle")
+.attr("x",width + 55)
+.attr("y", height - 55)
+.text("Headaches (14%)")
+.style('fill', 'Yellow');
+
+//Fatigue
+graphArea
+.append("text")
+.attr("class", "x label")
+.style("text-achor", "middle")
+.attr("x",width + 135)
+.attr("y", height - 160)
+.text("Fatigue (38%)")
+.style('fill', 'Orange');
+
+//Phlem
+graphArea
+.append("text")
+.attr("class", "x label")
+.style("text-achor", "middle")
+.attr("x",width + 330)
+.attr("y", height - 140)
+.text("Phlem (33%)")
+.style('fill', 'Orange');
+
+//MuscleAche
+graphArea
+.append("text")
+.attr("class", "x label")
+.style("text-achor", "middle")
+.attr("x",width + 230)
+.attr("y", height - 15)
+.text("MuscleAches (14%)")
+.style('fill', 'Yellow');
+
+//ShortBreath
+graphArea
+.append("text")
+.attr("class", "x label")
+.style("text-achor", "middle")
+.attr("x",width + 395)
+.attr("y", height - 79)
+.text("ShortBreath (18%)")
+.style('fill', 'Yellow');
+
+//SoreThroat
+graphArea
+.append("text")
+.attr("class", "x label")
+.style("text-achor", "middle")
+.attr("x",width + 480)
+.attr("y", height - 50)
+.text("SoreThroat (14%)")
+.style('fill', 'Yellow');
+
+//Chills
+graphArea
+.append("text")
+.attr("class", "x label")
+.style("text-achor", "middle")
+.attr("x",width + 530)
+.attr("y", height - 30)
+.text("Chills (11%)")
+.style('fill', 'Yellow');
 //label for x variables
 /*graphArea
 .append ("text")
@@ -225,7 +319,6 @@ d3.selectAll("rect")
         
     })
 })
-
 
 
 
