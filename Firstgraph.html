@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name = "author" content = "Kamogelo Mafaesa">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name = "url" content = "https://kamogeloo.github.io/WSOA3029A_1693173/">
+    <meta name = "description" content="informationisbeautiful Blog">
+    <title>wsoa3029A_1693173</title>
+    <link href="style.css" rel ="stylesheet" type = "text/css">
+    <link href="header.css" rel = "stylesheet" type = "text/css">
+    <link href = "footer.css" rel = "stylesheet" type = "text/css">
+    <script src="index.js" type="module" defer></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;900&display=swap" rel="stylesheet">
+   
+
+</head>
+
+
+
+
+<body>
+    <header>
+        <div class = "header">
+
+        </div>
+        <nav id = menulist class = navi>
+            <div class = "logo"><img src="logoo.png" alt="website logo" width="40%" height= "auto"></div>
+
+            <div class = "menucontainer" >
+            <ul>
+           
+           <li class = "menu"> <a href="index.html"> Home</a></li>
+           <li class = "menu"> <a href="about.html">About</a> </li>
+           <li class = "menu"><a href= "blogs.html">Blogs</a> </li>
+           <li class = "menu"><button id= "menubtn" onclick = "wireframes()">Wireframes</button></li>
+           <li class = "menu"><button id= "menubtn" onclick = "creativity()">Creativity</button></li>
+           <li class = "menu"><button id= "menubtn" onclick = "references()">References</button></li>
+           <li class = "menu"><a href = "javascript:void(0);" class="icon" onclick="Responsivemenu()"><i class = "bars"></i></a></li>
+           
+
+        </ul>
+    </div>
+  
+        </nav>
+        
+
+    </header>
+
+<main>
+    <div>
+        <h1 class = "placeholder"></h1>
+    </div>
+    
+    <section class="blogs">
+
+        <h3>Critical reflection on my first(and second) graph </h3>
+        
+        <figure class = "risk"><img src="graph1img.png" alt="Graph representing common symptoms of covid-19" width="100%"></figure>
+        <figcaption><i> Graph Representing Common Symptoms of Covid-19</i></figcaption>
+
+
+<p>As I have mentioned in my <a href= "blog2.html">second blog</a>, 
+    data visualisation is about taking in data, usually data that is big, and making it easier to understand and interesting to look at.
+     Data visualisation is about exploration and communication, the function of the developers of data visualisation is to make sure that they clearly communicate the data and make sure that they represent it in a way that is easy to understand, 
+     and they do this by using signifiers that are  culturally common.</p>
+<p>In my attempt of data visualisation, I created graphs that ‘analyse’ the most common symptoms of Coronavirus aka covid-19.
+     I found this information on a website called <a href = https://www.flattenthecurve.com/act-and-prepare/> Flatten The Curve</a>,
+      which is a site that provides information to users about how they can take care of themselves and others during this pandemic. </p>
+<p>The first graph that I created is a very simple one, it has the x-axis which represent the different symptoms.
+     Instead of putting the names of the different symptoms on the x-axis, 
+     I chose to put them next to the dots that represent different symptoms. The reason why I did this was because I wanted to make it easier for my users to read the data, 
+     and also for them to save time.</p>
+     <figure class = "risk"><img src="graph2img.png" alt="Graph representing common covid-19 symptoms" width="100%"></figure>
+     <figcaption><i> A Graph Representing Common Covid-19 symptoms</i></figcaption>
+<p>I also used the x-axis to represent the level of commonality of a symptoms in percentages, 
+    the higher the percentage the more common the symptom is. I also used colour to represent risk/commonality, 
+    the more saturated the colour the more common the symptom. In the first graph I used colour in the text, 
+    specifically in the names of the symptoms. In the second graph, I used colour in both the names of the symptoms and the circles that represent the symptoms. 
+    I also used the sizes of the circles to represent the commonality of the symptom.</p>
+
+
+
+</section>
+<section><a href="index.html">Home</a></section>
+
+</main>
+    <footer class ="footer">
+
+        
+    <a href = "https://www.facebook.com/kamo.jasmine" class = "fa fa-facebook"></a>
+    <a href = "https://www.instagram.com/kamo_mafaesa/?hl=en" class = "fa fa-instagram"></a>
+
+    </footer>
+    <script>
+        function buttonclicked(){
+         document.location.href="about.html";
+     }
+     function wireframes(){
+         document.location.href="wireframe.html";
+     }
+     function creativity(){
+         document.location.href="creativity.html";
+
+     }
+      function references(){
+         document.location.href="references.html";
+         
+     }
+
+    </script>
+
+    </body>
+
+</html>
