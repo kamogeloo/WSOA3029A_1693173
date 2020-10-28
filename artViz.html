@@ -7,7 +7,7 @@
     <meta name = "author" content = "Kamogelo Mafaesa">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name = "url" content = "https://kamogeloo.github.io/WSOA3029A_1693173/">
-    <meta name = "description" content="reflection blog">
+    <meta name = "description" content="art data viz">
     <title>wsoa3029A_1693173</title>
     <link href="style.css" rel ="stylesheet" type = "text/css">
     <link href="header.css" rel = "stylesheet" type = "text/css">
@@ -60,29 +60,50 @@
     
     <section class="blogs">
 
-        <h3>Critical reflection on Interactive Graph </h3>
+        <h3> Art Visualisation Data </h3>
         
-        <figure class = "risk"><img src="graph3img.png" alt="Graph representing common symptoms of covid-19" width="100%"></figure>
-        <figcaption><i> Interactive Graph Representing Common Symptoms of Covid-19</i></figcaption>
+        
 
 
-        <p>Interactive data visualisation “refers to the modern use of data analysis software that enables users to directly manipulate and explore graphical representations of data (omni-sci, 2020).
-             Data visualisation helps users to clearly understand the importance of data, and interactive data  improves on the concept of data visualisation by “incorporating tools that facilitate the modification
-              of the parameters of a data visualisation” (omni-sci, 2020) .The graphical elements in a data visualisation are often animated and provide instant feedback when a user inputs or hovers over them. <p>
-            <p> The benefits of interactive data visualisation are that users can identify trends faster and relationships between data more effectively.
-                 Interactive data is a useful for storytelling, it aids in making complex data easy to understand, and it keeps users engaged and even captures their interest. </p>
-            <p> In my opinion, interactive data visualisation is best suited for data that is very complex, and also for big data; static data visualisations on the other hand are best used for data that is less complex</p>
-            <p> In my attempt of interactive data visualisation, I chose to use non-complex data, the reason for this decision is because I wanted to first familiarise myself with this concept, 
-                to first learn the technical skills of creating this type of data visualisation.</p> 
-            <p> I used the same data that I used in my two static data visualisations, which was the information on the common symptoms of Coronavirus. 
-                I used colour to represent the commonality; I used saturation to represent commonality, the squares that are more saturated e.g the red square, 
-                represents the most common symptom of covid-19 and the yellow square represents the least common symptom. The reason behind the use of these signifiers is because they are common, people know that the colour red connotes danger and the colour yellow connotes optimism or happiness.</p>
-             I also used squares to represent different symptoms. 
-             The squares are differently scaled, the biggest represent the most common symptoms and small circles represent the least common symptoms, this is another common signifier, .
-              The interactive that I currently have in my visualisation is that when the user hovers over the squares they scale up and then scale down when the user is no longer hovering over them. 
-            More interaction will be added in the next iteration, and maybe even the data used might change</p>
-            
+        <p> Data visualisation is the representation of data or big data in a way that is aesthetically pleasing to people, to attract people. 
+            The purpose of data visualisations is to attract and also help people understand complex data and to identify trends and patterns. </p>
+        <p>Data visualisation is useful because many people are attracted to the visuals rather than a lot of text, so it is perfect for people who want to learn but hate to read. 
+         And as such it is important that developers use techniques that will make their data look aesthetically pleasing and also make sense graphically.
+        Kura, in his article titled Data Visualisation- An Underrated Art (2020) mentions that developers often make mistakes when it comes to how they represent their data visually,
+         he also gives advice on why developers should follow data heuristics.
+        For example, Kura (2020) advices that against a pie chart when creating data visualisations that show a change over time, he says that a bar chart would be a better suit instead. </p>
+        In his article, Kura (2020) mentions the four rules of effective data visualisation coined by Edward Tufte:
+        <ol>
+        <div> <li> Data-Ink ratio</li>
+            <figure class = "risk"><img src="dataink-ratio.jpg" alt="data-ink ratio before and after" width="100%"></figure>
+            <figcaption><i></i></figcaption>
+        <p>This rule states that the “data-ink ratio is defined by amount of data-ink divided by the total ink required to print the graphic” (Kura, 2020). This means that when creating visualisations, developers should consider leaving out information that has no use in the visualisation, information such as they key of the graph etc. Kura says that by increasing the data-ink ratio, this will make the data visualisation more readable and easier to understand, bettering the user experience. </p>
+        </div>
+        <div>
+        <li>Chart Junk</li>
+        <figure class = "risk"><img src="chart-junk.png" alt="chartjunk" width="80%"></figure>
+        <figcaption><i> </i></figcaption>
 
+        <p>There are two types of chart junk according to Edward Tufte; which are the unintended optical art and the grid. Unintended optical art occurs when there is “excessive shading and patterning of chart features”, these are not good because they can cause visual fatigue  (Kura, 2020). The solution to this is labelling the chart features directly. The next chart junk is  the grid;  when creating a graph (especially bar graphs) the grid is unnecessary because it competes with the data being represented, and it ends up looking messy. The solution to this is making the grid lines lighter or removing them completely</p>
+        </div>
+        <div>
+        <li> Spark lines</li>
+        <figure class = "risk"><img src="sparklines.png" alt="spaklines" width="100%"></figure>
+        <figcaption><i> </i></figcaption>
+
+        <p>Using Spark lines is encouraged to visualised data because they don’t need one to use axis, they are not complex, and the developers will spend less time visualising the data should they use them. </p>
+        </div>
+        <div>
+        <li> Lie Factor </li>
+        <figure class = "risk"><img src="Lie_factor.jpg" alt="image representing lie factor" width="60%"></figure>
+        <figcaption><i> </i></figcaption>
+
+        <p>The Lie Factor is “the size of an effect shown in the visual divided by the size of the effect actually in the data” (Kura, 2020). Kura(2020) mentions that this is done unintentionally for storytelling, however, it misleads the observers. </p>
+        </div>
+        
+        </ol>
+        <p>The lesson in this is that when making data visualisations, whether static or interactive, it is important to consider how you are representing the data; it is important for developers to use methods that will help their visualisations to be readable and accessible. Developers should be careful to not make their visualisations complex in the attempt to make them aesthetically pleasing to users.</p>
+        
 
 </section>
 <section><a href="index.html">Home</a></section>
