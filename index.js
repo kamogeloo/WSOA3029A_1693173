@@ -93,8 +93,8 @@ graphArea
 .attr("class", "x name")
 .attr("x",width + 83)
 .attr("y", height - 430)
-.attr("width", 15)
-.attr("height", 15)
+.attr("width", 25)
+.attr("height", 25)
 .style('fill', 'Red')
 .text ('Fever')
 ;
@@ -106,8 +106,8 @@ graphArea
 .attr("class", "x name")
 .attr("x", width + 133)
 .attr("y", height - 330)
-.attr("width", 15)
-.attr("height", 15)
+.attr("width", 20)
+.attr("height", 20)
 .style ("fill", "darkOrange");
 
 //heaches
@@ -116,8 +116,8 @@ graphArea
 .attr("class", "x name")
 .attr("x",width + 183)
 .attr("y", height - 54)
-.attr("width", 15)
-.attr("height", 15)
+.attr("width", 10)
+.attr("height", 10)
 .style('fill', 'Yellow');
 
 //Fatigue
@@ -126,8 +126,8 @@ graphArea
 .attr("class", "x name")
 .attr("x",width + 233)
 .attr("y", height - 170)
-.attr("width",15 )
-.attr("height", 15)
+.attr("width",18 )
+.attr("height", 18)
 .style('fill', 'Orange');
 
 //Phlem
@@ -146,8 +146,8 @@ graphArea
 .attr("class", "x name")
 .attr("x",width + 333)
 .attr("y", height - 53)
-.attr("width", 15)
-.attr("height", 15)
+.attr("width", 10)
+.attr("height", 10)
 .style('fill', 'Yellow');
 
 //ShortBreath
@@ -156,8 +156,8 @@ graphArea
 .attr("class", "x name")
 .attr("x",width + 383)
 .attr("y", height - 75)
-.attr("width", 15)
-.attr("height", 15)
+.attr("width", 12)
+.attr("height", 12)
 .style('fill', 'Yellow');
 
 //SoreThroat
@@ -166,8 +166,8 @@ graphArea
 .attr("class", "x name")
 .attr("x",width + 433)
 .attr("y", height - 53)
-.attr("width",15)
-.attr("height", 15)
+.attr("width",10)
+.attr("height", 10)
 .style('fill', 'Yellow');
 
 //Chills
@@ -176,8 +176,8 @@ graphArea
 .style("text-achor", "middle")
 .attr("x",width + 483)
 .attr("y", height - 43)
-.attr("width", 15)
-.attr("height", 15)
+.attr("width", 8)
+.attr("height", 8)
 .style('fill', 'Yellow');
 
 
@@ -273,30 +273,6 @@ graphArea
 .attr("y", height - 30)
 .text("Chills (11%)")
 .style('fill', 'Yellow');
-//label for x variables
-/*graphArea
-.append ("text")
-.attr("class","x axis")
-.attr("transform", "translate(85, " + height  + ")")
-.text("fever");*/
-
-
-
-//placement shape and color of circles
-/*graphArea
-.selectAll("name")
-.data(covidData)
-.enter()
-.append("circle")
-.attr("cx", function (d) {
-    return x1Scale(d.x);
-})
-.attr("cy", function (d){
-    return y1Scale(d.y);
-})f
-.attr("r",5)
-.attr('stroke', 'white')
-.style( "fill", "#843b62");*/
 
 d3.selectAll("rect")
 
@@ -517,50 +493,6 @@ graphData
 .attr("y", height - 40)
 .text("Chills (11%)")
 .style('fill', 'Yellow');
-//label for x variables
-/*graphArea
-.append ("text")
-.attr("class","x axis")
-.attr("transform", "translate(85, " + height  + ")")
-.text("fever");*/
 
 
-
-//placement shape and color of circles
-/*graphArea
-.selectAll("name")
-.data(covidData)
-.enter()
-.append("circle")
-.attr("cx", function (d) {
-    return x1Scale(d.x);
-})
-.attr("cy", function (d){
-    return y1Scale(d.y);
-})f
-.attr("r",5)
-.attr('stroke', 'white')
-.style( "fill", "#843b62");*/
-
-d3.selectAll("rect")
-
-.on("mouseover", function (){
-    d3.select(this)
-    
-    .attr("width", 40)
-    .attr("height", 40)
-    .style('stroke', 'red')
-    
-
-    .on("mouseout", function (){
-        d3.select(this)
-        .transition()
-        .delay(1000)
-        .duration(1000)
-        .attr("width", 15)
-        .attr("height", 15)
-        .style('stroke', 'none')
-        
-    })
-})
 
