@@ -1,10 +1,10 @@
 .header{
-    height:5%;
+    height:20%;
     position: fixed;
     top:0;
     bottom: 10%;
     left: 0;
-    background-color: black;
+    background-color:transparent;
     width: 100%;
     line-height: 100px;
     color: white;
