@@ -25,7 +25,7 @@ let margin = 50;
 let height = 500;
 let width = 10;
 
-let graphArea = d3.select("#graph2");
+let graphArea = d3.select("#graph3");
 graphArea
 .append("g")
 /*.attr('transform', 'translate(50, 50)');*/
@@ -325,3 +325,242 @@ d3.selectAll("rect")
 
 
 //third graph
+
+let graphData = d3.select("#graph2");
+graphData
+.append("g")
+
+//title of graph
+graphData
+.append("text")
+.attr("class", "x name")
+.style("text-achor", "middle")
+.attr("x",width + 50)
+.attr("y", height - 480)
+.text("Most Common Symptoms of Covid-19")
+.style('fill', 'white')
+
+///////////////rectangles//////////////////////
+//fever 
+graphData
+.append("circle")
+.attr("class", "x name")
+.attr("cx",width + 83)
+.attr("cy", height - 430)
+.attr("r", 25)
+.style("fill", "red")
+;
+
+
+//dry cough
+graphData
+.append("circle")
+.attr("class", "x name")
+.attr("cx", width + 133)
+.attr("cy", height - 330)
+.attr("r", 20)
+.style ("fill", "darkOrange");
+
+//heaches
+graphData
+.append("circle")
+.attr("class", "x name")
+.attr("cx",width + 183)
+.attr("cy", height - 54)
+.attr("r", 8)
+.style('fill', 'Yellow');
+
+//Fatigue
+graphData
+.append("circle")
+.attr("class", "x name")
+.attr("cx",width + 233)
+.attr("cy", height - 170)
+.attr("r", 15)
+.style('fill', 'Orange');
+
+//Phlem
+graphData
+.append("circle")
+.attr("class", "x name")
+.attr("cx",width + 283)
+.attr("cy", height - 150)
+.attr("r", 13)
+.style('fill', 'Orange');
+
+//MuscleAche
+graphData
+.append("circle")
+.attr("class", "x name")
+.attr("cx",width + 333)
+.attr("cy", height - 53)
+.attr("r", 8)
+.style('fill', 'Yellow');
+
+//ShortBreath
+graphData
+.append("circle")
+.attr("class", "x name")
+.attr("cx",width + 383)
+.attr("cy", height - 75)
+.attr("r", 10)
+.style('fill', 'Yellow');
+
+//SoreThroat
+graphData
+.append("circle")
+.attr("class", "x name")
+.attr("cx",width + 433)
+.attr("cy", height - 53)
+.attr("r", 8)
+.style('fill', 'Yellow');
+
+//Chills
+graphData
+.append("circle")
+.style("text-achor", "middle")
+.attr("cx",width + 483)
+.attr("cy", height - 43)
+.attr("r", 5)
+.style('fill', 'Yellow');
+
+
+//////////////////////////////////////////text for labels////////////////////////////
+
+
+//fever text
+graphData
+.append("text")
+.attr("class", "x label")
+.style("text-achor", "middle")
+.attr("x",width + 130)
+.attr("y", height - 420)
+.text("Fever (88%)")
+.style('fill', 'Red');
+
+//dry cough
+graphData
+.append("text")
+.attr("class", "x label")
+.style("text-achor", "middle")
+.attr("x",width + 173)
+.attr("y", height - 318)
+.text("Dry Cough (68%)")
+.style('fill', 'darkOrange');
+
+//heaches
+graphData
+.append("text")
+.attr("class", "x label")
+.style("text-achor", "middle")
+.attr("x",width + 55)
+.attr("y", height - 50)
+.text("Headaches (14%)")
+.style('fill', 'Yellow');
+
+//Fatigue
+graphData
+.append("text")
+.attr("class", "x label")
+.style("text-achor", "middle")
+.attr("x",width + 120)
+.attr("y", height - 160)
+.text("Fatigue (38%)")
+.style('fill', 'Orange');
+
+//Phlem
+graphData
+.append("text")
+.attr("class", "x label")
+.style("text-achor", "middle")
+.attr("x",width + 315)
+.attr("y", height - 140)
+.text("Phlem (33%)")
+.style('fill', 'Orange');
+
+//MuscleAche
+graphData
+.append("text")
+.attr("class", "x label")
+.style("text-achor", "middle")
+.attr("x",width + 230)
+.attr("y", height - 15)
+.text("MuscleAches (14%)")
+.style('fill', 'Yellow');
+
+//ShortBreath
+graphData
+.append("text")
+.attr("class", "x label")
+.style("text-achor", "middle")
+.attr("x",width + 395)
+.attr("y", height - 79)
+.text("ShortBreath (18%)")
+.style('fill', 'Yellow');
+
+//SoreThroat
+graphData
+.append("text")
+.attr("class", "x label")
+.style("text-achor", "middle")
+.attr("x",width + 450)
+.attr("y", height - 55)
+.text("SoreThroat (14%)")
+.style('fill', 'Yellow');
+
+//Chills
+graphData
+.append("text")
+.attr("class", "x label")
+.style("text-achor", "middle")
+.attr("x",width + 500)
+.attr("y", height - 40)
+.text("Chills (11%)")
+.style('fill', 'Yellow');
+//label for x variables
+/*graphArea
+.append ("text")
+.attr("class","x axis")
+.attr("transform", "translate(85, " + height  + ")")
+.text("fever");*/
+
+
+
+//placement shape and color of circles
+/*graphArea
+.selectAll("name")
+.data(covidData)
+.enter()
+.append("circle")
+.attr("cx", function (d) {
+    return x1Scale(d.x);
+})
+.attr("cy", function (d){
+    return y1Scale(d.y);
+})f
+.attr("r",5)
+.attr('stroke', 'white')
+.style( "fill", "#843b62");*/
+
+d3.selectAll("rect")
+
+.on("mouseover", function (){
+    d3.select(this)
+    
+    .attr("width", 40)
+    .attr("height", 40)
+    .style('stroke', 'red')
+    
+
+    .on("mouseout", function (){
+        d3.select(this)
+        .transition()
+        .delay(1000)
+        .duration(1000)
+        .attr("width", 15)
+        .attr("height", 15)
+        .style('stroke', 'none')
+        
+    })
+})
+
