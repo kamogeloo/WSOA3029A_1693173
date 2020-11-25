@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name = "author" content = "Kamogelo Mafaesa">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name = "url" content = "https://kamogeloo.github.io/WSOA3029A_1693173/">
+    <meta name = "description" content="This is the creativity page">
+    <link href="style.css" rel ="stylesheet" type = "text/css">
+    <link href="header.css" rel = "stylesheet" type = "text/css">
+    <link href = "footer.css" rel = "stylesheet" type = "text/css">
+    <script src="/d3/d3.min.js"></script>
+    <script src="d3-occ-master/d3-occ-master/js/d3.v4.min.js"></script>
+    <script src="index.js" type="module" defer></script>
+    <title>Graphs</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="anima.js"></script>
+   
+</head>
+<body style="background-color:  rgb(0, 0, 0);">
+    
+<section>
+    <h1>Other Data Visualisations of Same Data</h1>
+    <div id ="viz"></div>
+ 
+    <label><input type="checkbox" class = "most"> Most common to least common symptoms of covid-19</label>
+</section>
+
+
+<section>
+    <h3>Graph 2</h3>
+    <div class = "container">
+     <div class = "graph2"><svg id = "graph2" width ="800" height = "800"></svg>
+     <input type="range" name="Slider" id=Slider min="2" max="40" value="10">
+
+
+     <p></p>
+    </div>
+
+    </div>
+</section>
+    
+
+<section><a href="index.html">Home</a></section>
+
+<script>
+
+let dataset, bandScale, svg;
+d3.csv("risky.csv", function(d){
+          dataset = d;
+          dataset.forEach(function(d, i){ //i is index
+           d.order = i;
+          });
+          createChart();
+});
+
+function createChart(){
+   svg = d3.select("#viz")
+            .append("svg");
+
+        let w =500, h= 500;
+
+        svg.attr("width", w)
+           .attr("height", h);
+
+
+let symptoms = dataset.map(function(d){
+    return d.Symptoms;
+});
+
+//credit: https://youtu.be/kz4OCMzkEnY
+ 
+ bandScale = d3.scaleBand()
+                  .domain(symptoms)
+                  .range([0, w])
+                  .padding(0.3);
+  let heightScale = d3.scaleLinear()
+  .domain([0, 90])
+  .range([0, h]);
+       
+           //tell the system what we are making
+svg.selectAll("rect")
+ .data(dataset) //tell it what data we want to use
+ .enter() //after you press enter, it is going to look at our dataset and call the appended data e.g .append("rect")
+ .append("rect")
+ .attr("x", function(d,i){
+     return bandScale(d.Symptoms); //to space bars apart add i
+ })
+ .attr("y", function(d){
+return h - heightScale(d.risk);
+ })
+ .attr("width", function(d){
+     return bandScale.bandwidth();
+ })
+ .attr("height", function(d){
+     return heightScale (d.risk);
+ })
+ .attr("fill", function(d){
+     return d.color;
+ })
+ .append("title")
+ .text(function(d){
+     return d.Symptoms;
+ });
+ }
+
+
+ d3.select(".most")
+ .on("change", toggleSort);
+
+ function toggleSort(){
+
+    //sorting by percentages
+     let compareSort;
+
+     if(this.checked){
+     compareSort = function(a,b){
+         return b.risk -a.risk; 
+     }
+    }
+       else{
+     //sort by original order
+     compareSort = function(a,b){
+         return a.order -b.order; 
+     }
+    }
+ dataset.sort(compareSort);
+
+let symptomsOrder = dataset.map(
+    function(d){
+        return d.Symptoms;
+
+ });
+ 
+ bandScale.domain(symptomsOrder);
+
+ 
+     svg.transition()
+     .duration(1000)
+     .selectAll("rect")
+    
+     .attr("x", function(d){
+           return bandScale(d.Symptoms);
+     })
+     .delay(function(d,i){
+         return i * 200;
+     });
+ }
+
+
+</script>
+</body>
+</html>

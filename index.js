@@ -1,12 +1,6 @@
-function Responsivemenu(){
-    let menubar = document.getElementById("menulist");
-    if(menubar.className === "navi"){
-        menubar.className += "responsive";
-    }
-    else{
-        menubar.className = "navi";
-    }
-}
+
+
+
 //Second graph data
 let covidData = [
     
@@ -28,7 +22,7 @@ let width = 10;
 let graphArea = d3.select("#graph3");
 graphArea
 .append("g")
-/*.attr('transform', 'translate(50, 50)');*/
+
 
 
 
@@ -84,7 +78,7 @@ graphArea
 .attr("x",width + 150)
 .attr("y", height - 488)
 .text("Most Common Symptoms of Covid-19")
-.style('fill', 'white')
+.style('fill', 'white');
 
 ///////////////rectangles//////////////////////
 //fever 
@@ -96,8 +90,7 @@ graphArea
 .attr("width", 25)
 .attr("height", 25)
 .style('fill', 'Red')
-.text ('Fever')
-;
+.text ('Fever');
 
 
 //dry cough
@@ -274,7 +267,7 @@ graphArea
 .text("Chills (11%)")
 .style('fill', 'Yellow');
 
-d3.selectAll("rect")
+d3.selectAll("#graph3 rect")
 
 .on("mouseover", function (){
     d3.select(this)
@@ -302,7 +295,7 @@ d3.selectAll("rect")
 
 //third graph
 
-let graphData = d3.select("#graph2");
+let graphData = d3.select("#graph2", "Slider");
 graphData
 .append("g")
 
@@ -495,4 +488,5 @@ graphData
 .style('fill', 'Yellow');
 
 
-
+//menu
+    

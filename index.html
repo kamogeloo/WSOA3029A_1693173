@@ -26,29 +26,24 @@
 <body>
     
     <header>
-        <div class = "header">
-
-        </div>
-        <nav id = menulist class = navi>
+        <nav>
+            <div class = "hamburger">
+            <div class = "line"></div>
+            <div class = "line"></div>
+            <div class = "line"></div>
+            </div>
+            <ul class = "nav-links">
+            <li><a href = "#top">Home</a></li>
+            <li><a href = "#middle">About</a></li>
+            <li><a href = "#bottom">Blogs</a></li>
+            <li><button id = "button" onclick="wireframes()">Wireframes</button></li>
+            <li><button id = "button" onclick="creativity()">Creativity</button></li>
+            <li><button id = "button" onclick="references()">References</button></li>
+            </ul>
             <div class = "logo"><img src="logoo.png" alt="website logo" width="40%" height= "auto"></div>
 
-            <div class = "menucontainer" >
-            <ul>
-           
-           <li class = "menu"> <a href="#top"> Home</a></li>
-           <li class = "menu"> <a href="#middle">About</a> </li>
-           <li class = "menu"><a href= "#bottom">Blogs</a> </li>
-           <li class = "menu"><button id= "menubtn" onclick = "wireframes()">Wireframes</button></li>
-           <li class = "menu"><button id= "menubtn" onclick = "creativity()">Creativity</button></li>
-           <li class = "menu"><button id= "menubtn" onclick = "references()">References</button></li>
-           <li class = "menu"><a href = "javascript:void(0);" class="icon" onclick="Responsivemenu()"><i class = "bars"></i></a></li>
-           
-
-        </ul>
-    </div>
-  
-        </nav>
-        
+            </nav>
+    
 
     </header>
     <main>
@@ -72,39 +67,37 @@
        </div>
        
        <div id = "bottom"><a href = "blogs.html"></a>
+
+        <div>
         <h1 id ="blogtitle">Blogs</h1>
+    </div>
 
         <div class = "row">
         <div class = "column">
-          <figure> <a href= "blog1.html"> <img src="representation-matters-in-stock-photos.jpg" alt="representation of different people" width=80%> </a></figure>
+          <figure> <a href= "blog1.html"> <img src="representation-matters-in-stock-photos.jpg" alt="representation of different people" width= "200px" height ="400px"> </a></figure>
           <figcaption>Representation</figcaption>
         </div>
 
         <div class = "column">
-         <figure> <a href = "blog2.html"> <img src="What-is-Data-Visualization-Blog-Header.jpg"  alt="image about data visualisation" width=100% ></a>  </figure>
+         <figure> <a href = "blog2.html"> <img src="What-is-Data-Visualization-Blog-Header.jpg"  alt="image about data visualisation" width= "200px" height="400px" ></a>  </figure>
          <figcaption>Data Visualisation</figcaption>
         </div>
 
         <div class = "column">
-         <figure> <a href= "blog3.html">   <img src="Infrographic.jpg" alt="different infographics" width=60%> </a> </figure>
+         <figure> <a href= "blog3.html">   <img src="Infrographic.jpg" alt="different infographics" width="200px" height="400px"> </a> </figure>
          <figcaption>Information Is beautiful</figcaption>
           
         </div>
-        <div class = "column">
-            <figure> <a href= "Firstgraph.html">   <img src="graphtype.png" alt="different types od bar graphs" width=100%> </a> </figure>
-            <figcaption>Reflection 1</figcaption>
-             
-           </div>
-           <div class = "column">
-            <figure> <a href= "InteractiveGraph.html">   <img src="interactiveimg.gif" alt="interactive gif" width=100%> </a> </figure>
-            <figcaption>Reflection 2</figcaption>
-             
-           </div>
-           <div class = "column">
-            <figure> <a href= "artViz.html">   <img src="artvissual.gif" alt="art visual gif" width=100%> </a> </figure>
-            <figcaption>Art visualisation</figcaption>
-             
-           </div>
+       
+    </div>
+    <br>
+    
+    <section><a  href="blogs.html">See More</a> </section>
+
+    
+    <div class = BacktoTop>
+
+        <button onclick = "BacktoTop()" id ="topbtn" tittle = "Back to top"><i class ="arrow up"></i></button>
     </div>
 
 </main>
@@ -132,15 +125,31 @@
          
      }
 
-     /*let nav =  document.getElementsByClassName(".menucontainer");
-             window.onscroll = function() {
-         if(nav == document.getElementById("middle")){
-             nav.style.backgroundColor= "red";
-             
-            
-         }
-         
-     }*/
+    
+
+      //scrolluparrow
+    
+    let topbutton = document.getElementById("topbtn");
+    window.onscroll = function() {scrollTo()};
+    console.log('it works');
+    
+    function scrollTo() {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20)
+        {
+              topbutton.style.display = "block";
+    } 
+    else {
+        topbutton.style.display = "none";
+    }
+    }
+
+    
+
+    function BacktoTop() {
+        document.body.scrollTop = 0
+        document.documentElement.scrollTop = 0;
+    
+    }
 
      
 
