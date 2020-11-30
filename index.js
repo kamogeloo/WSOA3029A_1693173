@@ -19,8 +19,9 @@ let margin = 50;
 let height = 500;
 let width = 10;
 
-let graphArea = d3.select("#graph3");
-graphArea
+let graphInfo = d3.select("#graph3");
+
+graphInfo
 .append("g")
 
 
@@ -37,20 +38,20 @@ let y1Scale = d3.scaleLinear()
 .domain([0, 100])
 .range([height + width, 0]);
 
- graphArea
+ graphInfo
 .append("g")
 .attr('transform', 'translate(50 , 10)')
 .call(d3.axisLeft(y1Scale));
 
 
-graphArea
+graphInfo
 .append("g")
 .attr('transform', 'translate(50, 520)')
 .call(d3.axisBottom(x1Scale));
 /*attr('transform', 'translate(0, 510)');*/
 
 //Label for the y-axis
-graphArea
+graphInfo
 .append("text")
 .attr("transform", "rotate(-90)")
 .attr("y", 0 - margin.left)
@@ -61,7 +62,7 @@ graphArea
 .style('fill', 'white');
 
 //Label for the x-axis
-graphArea
+graphInfo
 .append("text")
 .attr("class", "x name")
 .style("text-achor", "middle")
@@ -71,7 +72,7 @@ graphArea
 .style('fill', 'white');
 
 //title of graph
-graphArea
+graphInfo
 .append("text")
 .attr("class", "x name")
 .style("text-achor", "middle")
@@ -82,7 +83,7 @@ graphArea
 
 ///////////////rectangles//////////////////////
 //fever 
-graphArea
+graphInfo
 .append("rect")
 .attr("class", "x name")
 .attr("x",width + 83)
@@ -94,7 +95,7 @@ graphArea
 
 
 //dry cough
-graphArea
+graphInfo
 .append("rect")
 .attr("class", "x name")
 .attr("x", width + 133)
@@ -104,7 +105,7 @@ graphArea
 .style ("fill", "darkOrange");
 
 //heaches
-graphArea
+graphInfo
 .append("rect")
 .attr("class", "x name")
 .attr("x",width + 183)
@@ -114,7 +115,7 @@ graphArea
 .style('fill', 'Yellow');
 
 //Fatigue
-graphArea
+graphInfo
 .append("rect")
 .attr("class", "x name")
 .attr("x",width + 233)
@@ -124,7 +125,7 @@ graphArea
 .style('fill', 'Orange');
 
 //Phlem
-graphArea
+graphInfo
 .append("rect")
 .attr("class", "x name")
 .attr("x",width + 283)
@@ -134,7 +135,7 @@ graphArea
 .style('fill', 'Orange');
 
 //MuscleAche
-graphArea
+graphInfo
 .append("rect")
 .attr("class", "x name")
 .attr("x",width + 333)
@@ -144,7 +145,7 @@ graphArea
 .style('fill', 'Yellow');
 
 //ShortBreath
-graphArea
+graphInfo
 .append("rect")
 .attr("class", "x name")
 .attr("x",width + 383)
@@ -154,7 +155,7 @@ graphArea
 .style('fill', 'Yellow');
 
 //SoreThroat
-graphArea
+graphInfo
 .append("rect")
 .attr("class", "x name")
 .attr("x",width + 433)
@@ -164,7 +165,7 @@ graphArea
 .style('fill', 'Yellow');
 
 //Chills
-graphArea
+graphInfo
 .append("rect")
 .style("text-achor", "middle")
 .attr("x",width + 483)
@@ -178,7 +179,7 @@ graphArea
 
 
 //fever text
-graphArea
+graphInfo
 .append("text")
 .attr("class", "x label")
 .style("text-achor", "middle")
@@ -188,7 +189,7 @@ graphArea
 .style('fill', 'Red');
 
 //dry cough
-graphArea
+graphInfo
 .append("text")
 .attr("class", "x label")
 .style("text-achor", "middle")
@@ -198,7 +199,7 @@ graphArea
 .style('fill', 'darkOrange');
 
 //heaches
-graphArea
+graphInfo
 .append("text")
 .attr("class", "x label")
 .style("text-achor", "middle")
@@ -208,7 +209,7 @@ graphArea
 .style('fill', 'Yellow');
 
 //Fatigue
-graphArea
+graphInfo
 .append("text")
 .attr("class", "x label")
 .style("text-achor", "middle")
@@ -218,7 +219,7 @@ graphArea
 .style('fill', 'Orange');
 
 //Phlem
-graphArea
+graphInfo
 .append("text")
 .attr("class", "x label")
 .style("text-achor", "middle")
@@ -228,7 +229,7 @@ graphArea
 .style('fill', 'Orange');
 
 //MuscleAche
-graphArea
+graphInfo
 .append("text")
 .attr("class", "x label")
 .style("text-achor", "middle")
@@ -238,7 +239,7 @@ graphArea
 .style('fill', 'Yellow');
 
 //ShortBreath
-graphArea
+graphInfo
 .append("text")
 .attr("class", "x label")
 .style("text-achor", "middle")
@@ -248,7 +249,7 @@ graphArea
 .style('fill', 'Yellow');
 
 //SoreThroat
-graphArea
+graphInfo
 .append("text")
 .attr("class", "x label")
 .style("text-achor", "middle")
@@ -258,7 +259,7 @@ graphArea
 .style('fill', 'Yellow');
 
 //Chills
-graphArea
+graphInfo
 .append("text")
 .attr("class", "x label")
 .style("text-achor", "middle")
@@ -490,3 +491,23 @@ graphData
 
 //menu
     
+//code for menu   credit: https://youtu.be/H4MkGzoACpQ
+const hamburger = document.querySelector(".hamburger");
+const navLinks = document.querySelector(".nav-links");
+const links = document.querySelectorAll(".nav-links li, #button");
+const image =document.querySelector(".aboutpage img");
+const heading = document.querySelector(".aboutpage h1");
+const body = document.querySelector("body");
+
+
+hamburger.addEventListener("click", () => {
+
+navLinks.classList.toggle("open");
+links.forEach(link => {
+link.classList.toggle("fade");
+body.style.overflow = "hidden";
+image.style.display = "none";
+heading.style.display = "none";
+
+});
+});
